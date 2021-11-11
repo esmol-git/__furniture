@@ -1,0 +1,40 @@
+html {
+  box-sizing: border-box;
+  font-size: $base-font-size;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: $mainFont, sans-serif;
+}
+
+.site-container {
+  overflow: hidden;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: $maxWidthContainer;
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}

@@ -1,0 +1,68 @@
+mixin icon(name,mod)
+	if(mod)
+		svg(class="svg-sprite-icon icon-" + name + ' ' + mod)
+			use(xlink:href="static/images/svg/symbol/sprite.svg#" + name)
+	else
+		svg(class="svg-sprite-icon icon-" + name)
+			use(xlink:href="static/images/svg/symbol/sprite.svg#" + name)
+
+mixin card(img, title, price, descr, btn, classes)
+	.mix.furniture__item.card(class= classes)
+		.card__img
+			img.card__img(src= img)
+		.card__header
+			.card__header-title= title
+			.card__header-price= price
+		.card__desc= descr
+		a.card__btn.btn.btn--gray(href="#") Order Now
+
+mixin socialLink(icon,link)
+	li.socials__item
+		a(href=link).socials__link
+			+icon(icon, 'socials__icon')
+
+mixin reviewItem(img, alt, name, date, text, num)
+	.swiper-slide.slide-item
+		.slide-item__img
+			img(src= img alt= alt)
+		.slide-item__info.item-info
+			.item-info__header
+				.item-info__name= name
+				.item-info__date= date
+			.item-info__text= text
+			.item-info__stars
+				case num
+					when 4
+						- for (let x = 0; x < 5; x++)
+							if(x < 4)
+								+icon('star')
+							else
+								+icon('empty-star')
+					when 3
+						- for (let x = 0; x < 5; x++)
+							if(x < 3)
+								+icon('star')
+							else
+								+icon('empty-star')
+					when 2
+						- for (let x = 0; x < 5; x++)
+							if(x < 2)
+								+icon('star')
+							else
+								+icon('empty-star')
+					when 1
+						- for (let x = 0; x < 5; x++)
+							if(x < 1)
+								+icon('star')
+							else
+								+icon('empty-star')
+					when 0
+						- for (let x = 0; x < 5; x++)
+							if(x < 0)
+								+icon('star')
+							else
+								+icon('empty-star')
+					default
+						- for (let x = 0; x < 5; x++)
+							+icon('star')
+
