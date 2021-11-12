@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   font-size: $base-font-size;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -37,4 +38,43 @@ body {
 
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
+}
+.section {
+  @include adaptiv-value("padding-top", 70, 40, 0);
+  @include adaptiv-value("padding-bottom", 70, 40, 0);
+  &__title {
+    @include adaptiv-font(30, 20, 0);
+    @include adaptiv-value("line-height", 35, 25, 0);
+    @include adaptiv-value("margin-bottom", 15, 10, 0);
+    color: $black;
+  }
+  &__subtitle {
+    @include adaptiv-font(20, 12, 0);
+
+    position: relative;
+    max-width: 434px;
+    line-height: 23px;
+    color: #373737;
+    padding-left: 76px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 69px;
+      height: 1px;
+      background-color: #000;
+    }
+  }
+}
+@include tablet {
+  .section {
+    &__subtitle {
+      padding-left: 0;
+      &::before {
+        display: none;
+      }
+    }
+  }
 }

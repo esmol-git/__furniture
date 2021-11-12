@@ -1,0 +1,127 @@
+footer {
+	flex: 0 0 auto;
+}
+.footer {
+	@include adaptiv-value("padding-top", 90, 30, 0);
+	@include adaptiv-value("padding-bottom", 90, 30, 0);
+	background-color: $gray;
+	color: $white;
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__item {
+		display: flex;
+		flex-direction: column;
+		&-title {
+			@include adaptiv-font(20, 14, 0);
+			@include adaptiv-value("line-heigh", 23, 160, 0);
+			@include adaptiv-value("margin-bottom", 30, 15, 0);
+
+			font-weight: 500;
+		}
+		&-link,
+		&-faq {
+			@include adaptiv-font(14, 11, 0);
+			@include adaptiv-value("line-heigh", 16, 13, 0);
+
+			color: $white;
+			text-decoration: none;
+			&:not(:last-child) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+	&__logo {
+		@include adaptiv-font(35, 22, 0);
+		@include adaptiv-value("line-heigh", 41, 24, 0);
+		@include adaptiv-value("margin-bottom", 30, 15, 0);
+
+		font-weight: bold;
+	}
+	&__connection {
+		@include adaptiv-font(16, 12, 0);
+		@include adaptiv-value("line-heigh", 19, 14, 0);
+		display: flex;
+		align-items: center;
+		position: relative;
+		color: $white;
+		margin-bottom: 20px;
+		text-decoration: none;
+		&-icon {
+			width: 32px;
+			height: 32px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: #fff;
+			border-radius: 50%;
+			margin-right: 10px;
+			svg {
+				width: 14px;
+				height: 14px;
+			}
+		}
+	}
+	&__social {
+		&-list {
+			display: flex;
+		}
+		&-item {
+			&:not(:last-child) {
+				margin-right: 20px;
+			}
+		}
+		&-link {
+			svg {
+				width: 20px;
+				height: 20px;
+				fill: #fff;
+			}
+		}
+	}
+}
+.form {
+	margin-bottom: 30px;
+	&__input {
+		width: 170px;
+		border-radius: 5px;
+		padding: 8px 12px;
+		border: none;
+		margin-right: 5px;
+		&:placeholder {
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 16px;
+			color: #373737;
+		}
+	}
+	&__btn {
+		padding: 12px;
+		font-size: 14px;
+		line-height: 16px;
+		color: #373737;
+	}
+}
+@include tablet {
+	.footer {
+		&__wrapper {
+			row-gap: 20px;
+			flex-wrap: wrap;
+		}
+		&__item {
+			width: 50%;
+		}
+	}
+}
+@include mobile {
+	.footer {
+		&__wrapper {
+			row-gap: 20px;
+			flex-wrap: wrap;
+		}
+		&__item {
+			width: 100%;
+		}
+	}
+}

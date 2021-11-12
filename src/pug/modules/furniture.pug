@@ -1,0 +1,45 @@
+section.section.furniture#furniture
+	.container
+		.section__title Our Furniture
+		.section__subtitle It is a long established fact that a reader will be distracted by the service.
+		.furniture__controls
+			form.furniture__search
+				input(type="text" placeholder="Search a furniture")
+				button(type="submit")
+					+icon("search")
+			.furniture__control
+				button(type='button' data-filter='all') All
+				button(type='button' data-filter='.chair') Chair
+				button(type='button' data-filter='.table') Table
+				button(type='button' data-filter='.bed') Bed
+				button(type='button' data-filter='.sofa') Sofa
+				button(type='button' data-filter='.wardrobe') Wardrobe
+				button(type='button' data-filter='.armchair') Armchair
+				button(type='button' data-filter='.dimple') Dimple
+				button(type='button' data-filter='.rask') Rack
+				button(type='button' data-filter='.stand') Stand
+			select#select.furniture__select.default
+				option(value='all') All
+				option(value='.chair') Chair
+				option(value='.table') Table
+				option(value='.bed') Bed
+				option(value='.sofa') Sofa
+				option(value='.wardrobe') Wardrobe
+				option(value='.armchair') Armchair
+				option(value='.dimple') Dimple
+				option(value='.rask') Rack
+				option(value='.stand') Stand
+
+		.furniture__items
+			+card("../img/furnitures/img-1.jpg", 'ddd', "$ 255", "It is a long estiabs lished fact that a reader will be the service!!!!.", "btn", "table")
+			+card("../img/furnitures/img-2.jpg", 'ddd', "$ 300", "It is a long estiabs lished fact that a reader will be the service!!!!.", "btn", "armchair")
+			+card("../img/furnitures/img-3.jpg", 'ddd', "$ 255", "It is a long estiabs lished fact that a reader will be the service!!!!.", "btn", "bed")
+			+card("../img/furnitures/img-4.jpg", 'ddd', "$ 255", "It is a long estiabs lished fact that a reader will be the service!!!!.", "btn", "sofa")
+			+card("../img/furnitures/img-5.jpg", 'ddd', "$ 100", "It is a long estiabs lished fact that a reader will be the service!!!!.", "btn", "wardrobe")
+			+card("../img/furnitures/img-6.jpg", 'ddd', "$ 255", "It is a long estiabs lished fact that a reader will be the service!!!!.", "btn", "dimple")
+			+card("../img/furnitures/img-7.jpg", 'ddd', "$ 255", "It is a long estiabs lished fact that a reader will be the service!!!!.", "btn", "chair")
+			+card("../img/furnitures/img-8.jpg", 'ddd', "$ 255", "It is a long estiabs lished fact that a reader will be the service!!!!.", "btn", "rask")
+			+card("../img/furnitures/img-9.jpg", 'ddd', "$ 255", "It is a long estiabs lished fact that a reader will be the service!!!!.", "btn", "stand")
+		.furniture__btn
+			a.btn.btn--gray(href="#") View All
+

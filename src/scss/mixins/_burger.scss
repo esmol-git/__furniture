@@ -2,11 +2,12 @@
   position: relative;
   border: none;
   padding: 0;
-  width: var(--burger-width);
-  height: var(--burger-height);
-  color: #000;
+  width: $burger-width;
+  height: $burger-height;
+  color: $black;
   background-color: transparent;
   cursor: pointer;
+  z-index: 100;
 
   &::before,
   &::after {
@@ -14,8 +15,8 @@
     position: absolute;
     left: 0;
     width: 100%;
-    height: var(--burger-line-height);
-    background-color: currentColor;
+    height: $burger-line-height;
+    background-color: $black;
     transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
   }
 
@@ -24,7 +25,7 @@
   }
 
   &::after {
-    top: calc(100% - var(--burger-line-height));
+    top: calc(100% - $burger-line-height);
   }
 
   &__line {
@@ -32,8 +33,9 @@
     left: 0;
     top: 50%;
     width: 100%;
-    height: var(--burger-line-height);
-    background-color: currentColor;
+    height: $burger-line-height;
+    background-color: $black;
+    height: $burger-line-height;
     transform: translateY(-50%);
     transition: transform 0.3s ease-in-out;
   }
@@ -43,17 +45,20 @@
       top: 50%;
       transform: rotate(45deg);
       transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+      background-color: $white;
     }
 
     &::after {
       top: 50%;
       transform: rotate(-45deg);
       transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+      background-color: $white;
     }
 
     .burger__line {
       transform: scale(0);
       transition: transform 0.3s ease-in-out;
+      background-color: $white;
     }
   }
 }

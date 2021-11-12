@@ -1,0 +1,94 @@
+.service {
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 45px;
+	}
+	&__item {
+		flex: 1 1 33.33%;
+		max-width: 366px;
+		border-radius: 5px;
+		padding: 12px;
+		transition: 0.2s ease-in-out;
+		&:not(:last-child) {
+			margin-right: 42px;
+		}
+		&:hover {
+			box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
+		}
+	}
+	&-item {
+		&__title {
+			@include adaptiv-font(20, 16, 0);
+			font-weight: 500;
+			line-height: 23px;
+			color: #000;
+			margin-bottom: 10px;
+		}
+		&__subtitle {
+			@include adaptiv-font(20, 15, 0);
+
+			font-weight: 300;
+			line-height: 30px;
+			color: #696161;
+		}
+		&__icon {
+			width: 75px;
+			height: 75px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 5px;
+			margin-bottom: 15px;
+			svg {
+				width: 36px;
+				height: 36px;
+			}
+		}
+		&:nth-child(1) .service-item__icon {
+			background-color: rgba(21, 188, 224, 0.1);
+			svg {
+				stroke: rgba(21, 188, 224, 1);
+				fill: transparent;
+				stroke-width: 3;
+			}
+		}
+		&:nth-child(2) .service-item__icon {
+			background-color: rgba(224, 21, 94, 0.09);
+			svg {
+				stroke: rgba(224, 21, 94, 1);
+				stroke-width: 2;
+				fill: transparent;
+			}
+		}
+		&:nth-child(3) .service-item__icon {
+			background-color: rgba(21, 29, 224, 0.11);
+			svg {
+				fill: rgba(21, 29, 224, 1);
+			}
+		}
+	}
+}
+@include tablet {
+	.service {
+		&__wrapper {
+			flex-direction: column;
+		}
+		&__item {
+			margin-right: 0 !important;
+		}
+		&-item {
+			text-align: center;
+			&__icon {
+				margin: 0 auto 10px;
+				width: 50px;
+				height: 50px;
+				svg {
+					width: 28px;
+					height: 28px;
+				}
+			}
+		}
+	}
+}

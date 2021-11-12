@@ -1,3 +1,44 @@
 footer.footer
+	.container.footer__wrapper
+		.footer__item
+			p.footer__logo SQ R3
+			a.footer__connection(href="tel:8801760007083")
+				.footer__connection-icon
+					+icon('phone-stroke')
+				span +8801760-007083
+			a.footer__connection(href="mailto:uiuxmdomith@gmail.com") 
+				.footer__connection-icon
+					+icon('mail')
+				span uiuxmdomith@gmail.com
+			ul.footer__social.footer__social-list
+				li.footer__social-item
+					a(href="#").footer__social-link
+						+icon('fb')
+				li.footer__social-item
+					a(href="#").footer__social-link
+						+icon('twitter')
+				li.footer__social-item
+					a(href="#").footer__social-link
+						+icon('instagram')
+		.footer__item.hidden--mobile
+			.footer__item-title Usefull Links
+			a.footer__item-link(href="#") Home
+			a.footer__item-link(href="#") About
+			a.footer__item-link(href="#") Service
+			a.footer__item-link(href="#") Furniture
+
+		.footer__item.hidden--mobile
+			.footer__item-title FAQ
+			.footer__item-faq Lorem Ipsum Dolar
+			.footer__item-faq Lorem Ipsum Dolar
+			.footer__item-faq Lorem Ipsum Dolar
+			.footer__item-faq Lorem Ipsum Dolar
+
+		.footer__item
+			.footer__item-title Newsletter
+			form.footer__form.form
+				input(placeholder="Enter your mail" type="email").form__input
+				button(type="submit").btn.form__btn Send
+			a(href="#").btn.btn__download Download App
 
 

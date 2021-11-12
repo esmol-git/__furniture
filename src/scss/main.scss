@@ -10,6 +10,13 @@
 @import "components/search";
 @import "components/buttons";
 @import "components/socials";
+@import "components/scroll";
 
 // подключения блоков страницы
 @import "./blocks/header";
+@import "./blocks/home";
+@import "./blocks/about";
+@import "./blocks/service";
+@import "./blocks/furniture";
+@import "./blocks/reviews";
+@import "./blocks/footer";

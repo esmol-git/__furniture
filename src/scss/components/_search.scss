@@ -18,12 +18,9 @@ $radius: 5px;
   }
 
   &__icon {
-    fill: $clr-gray400;
+    fill: $black;
     z-index: 99;
     margin-left: 5px;
-    &:hover .search input {
-      box-shadow: 0 0 10px 5px $clr-gray300;
-    }
   }
 
   &__close {
