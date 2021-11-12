@@ -21,6 +21,9 @@ const concat = require("gulp-concat");
 const pug = require("gulp-pug");
 const plumber = require("gulp-plumber");
 const cached = require("gulp-cached");
+const svgmin = require("gulp-svgmin");
+const cheerio = require("gulp-cheerio");
+const replace = require("gulp-replace");
 
 let isProd = false; // dev by default
 
@@ -44,17 +47,39 @@ const pugs = () => {
 };
 //svg sprite
 const svgSprites = () => {
-  return src("./src/img/svg/**.svg")
-    .pipe(
-      svgSprite({
-        mode: {
-          stack: {
-            sprite: "../sprite.svg", //sprite file name
+  return (
+    src("./src/img/svg/**.svg")
+      // minify svg
+      .pipe(
+        svgmin({
+          js2svg: {
+            pretty: true,
           },
-        },
-      })
-    )
-    .pipe(dest("./app/img"));
+        })
+      )
+      .pipe(
+        cheerio({
+          run: function ($) {
+            $("[fill]").removeAttr("fill");
+            $("[stroke]").removeAttr("stroke");
+            $("[style]").removeAttr("style");
+          },
+          parserOptions: { xmlMode: true },
+        })
+      )
+      // cheerio plugin create unnecessary string '&gt;', so replace it.
+      .pipe(replace("&gt;", ">"))
+      .pipe(
+        svgSprite({
+          mode: {
+            stack: {
+              sprite: "../sprite.svg", //sprite file name
+            },
+          },
+        })
+      )
+      .pipe(dest("./app/img"))
+  );
 };
 
 const styles = () => {

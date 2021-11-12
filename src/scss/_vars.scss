@@ -10,10 +10,10 @@ $base-font-size: 16px;
 $minWidth: 320px;
 $maxWidth: 1920;
 $maxWidthContainer: 1240px;
-$md1: $maxWidthContainer + 12;
-$md2: 991.98;
-$md3: 767.98;
-$md4: 479.98;
+$md1: $maxWidthContainer + 12; //desctop
+$md2: 991.98px; //laptop
+$md3: 767.98px; //tablet
+$md4: 479.98px; //mobile
 $content-size: 1190px;
 
 // Fonts

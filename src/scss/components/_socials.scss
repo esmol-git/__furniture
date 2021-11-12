@@ -1,0 +1,25 @@
+.social {
+  &__list {
+    @include flex(column, center, center);
+    &__item {
+      margin-left: 45px;
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  &__link {
+    transition: transform 0.2s ease-in-out;
+    display: block;
+    width: 30px;
+    padding: 10px;
+    svg {
+      width: 30px;
+      height: 30px;
+      fill: #fff;
+    }
+    &:hover {
+      transform: translate(-3px, -3px);
+    }
+  }
+}

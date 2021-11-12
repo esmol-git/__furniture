@@ -1,0 +1,74 @@
+$clr-gray300: #e1e5ee;
+$clr-gray350: #c7ccdb;
+$clr-gray400: #767b91;
+
+/*   border radius */
+$radius: 5px;
+
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  svg {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  &__icon {
+    fill: $clr-gray400;
+    z-index: 99;
+    margin-left: 5px;
+    &:hover .search input {
+      box-shadow: 0 0 10px 5px $clr-gray300;
+    }
+  }
+
+  &__close {
+    right: 5px;
+    opacity: 0;
+    transition: 0.3 opacity ease-in;
+  }
+
+  &__delete {
+    fill: $clr-gray350;
+    right: 1.5rem;
+    display: none;
+  }
+
+  input {
+    border: none;
+    border-radius: 50%;
+    font-family: inherit;
+    font-size: 1rem;
+    color: $clr-gray400;
+    outline: none;
+    width: 40px;
+    transition: 500ms all ease-in-out;
+    &:not(:placeholder-shown) ~ .search__delete {
+      display: block;
+    }
+  }
+
+  //open state
+  &-open input {
+    box-shadow: 0 0 10px 5px $clr-gray300;
+    width: 20rem;
+    padding: 8px 4rem 8px 2rem;
+    border-radius: $radius;
+  }
+  &-open svg {
+    width: 20px;
+    height: 20px;
+  }
+  //when content is in text field show delete button
+  &-open svg.search__close {
+    fill: $clr-gray400;
+    opacity: 1;
+  }
+  &-open.search {
+    justify-content: start;
+  }
+}

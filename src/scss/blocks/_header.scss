@@ -25,34 +25,7 @@ header {
     margin-left: 35px;
   }
   &__search {
-    margin-left: 56px;
-    svg {
-      width: 30px;
-      height: 30px;
-    }
-  }
-}
-.social__list {
-  @include flex(column, center, center);
-}
-.social__item {
-  margin-left: 45px;
-  &:not(:last-child) {
-    margin-bottom: 30px;
-  }
-}
-.social__link {
-  transition: transform 0.2s ease-in-out;
-  display: block;
-  width: 30px;
-  padding: 10px;
-  svg {
-    width: 30px;
-    height: 30px;
-    fill: #fff;
-  }
-  &:hover {
-    transform: translate(-3px, -3px);
+    margin-left: 30px;
   }
 }
 .logo {
@@ -61,8 +34,9 @@ header {
   font-weight: bold;
   color: $black;
 }
+
 // breakpoints
-@media (max-width: $md2+px) {
+@include laptop {
   .header {
     &__left {
       width: 100px;
@@ -85,6 +59,7 @@ header {
     }
   }
 }
+
 @media (max-width: $md3+px) {
   .header {
     &__left {

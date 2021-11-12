@@ -1,0 +1,31 @@
+.btn {
+  @include adaptiv-font(18, 12, 0);
+  @include adaptiv-value("line-height", 21, 12, 0);
+  @include adaptiv-value("padding-left", 17, 14, 0);
+  @include adaptiv-value("padding-right", 17, 14, 0);
+  @include adaptiv-value("padding-top", 13, 10, 0);
+  @include adaptiv-value("padding-bottom", 13, 10, 0);
+
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  &--gray {
+    background-color: #373737;
+    color: #fff;
+    &:hover {
+      background-color: lighten(#373737, 10%);
+    }
+  }
+  &__download {
+    width: 171px;
+    background: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #373737;
+    padding: 9px 20px;
+  }
+}
