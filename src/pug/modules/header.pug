@@ -1,4 +1,9 @@
 header.header
-  .container 
-    p werf
-
+	.container.header__container
+		a.logo.header__logo SQ R3
+		.header__block
+			include ../elements/nav-menu
+			a.btn.btn--gray.header__btn(href="#") Order Now
+			a.header__search.search(href="#")
+				+icon('search')
+			#nav-toggle.nav__toggle menu

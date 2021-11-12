@@ -29,3 +29,16 @@
   align-items: center;
   justify-content: space-between;
 }
+
+@mixin flex($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin background-img($url, $cover, $repeat) {
+  background-image: url($url);
+  background-size: $cover;
+  background-repeat: $repeat;
+}

@@ -1,6 +1,6 @@
 // Colors
-$white: #ffffff;
-$black: #000000;
+$white: #fff;
+$black: #000;
 $gray: #373737;
 
 // Sizes
@@ -14,10 +14,12 @@ $md1: $maxWidthContainer + 12;
 $md2: 991.98;
 $md3: 767.98;
 $md4: 479.98;
-
 $content-size: 1190px;
 
 // Fonts
-$mainFont: "Weifinder";
-//
+$mainFont: "Roboto-Regular", sans-serif;
+$roboto300: "Roboto-Light", sans-serif;
+$roboto500: "Roboto-Medium", sans-serif;
+$roboto700: "Roboto-Bold", sans-serif;
+$extra: "Revalia", cursive;
 $transition: all 0.3s ease-in-out;
